@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Index</title>
+</head>
+
+<body>
+<script>
+    function getMessageDetails(id) {
+        window.location.href = '/messages/' + id;
+    }
+</script>
+
+    <a href="/new">New message</a>
+    <h1>
+        <%= heading %>
+    </h1>
+    <ul>
+        <% for (message of messages){ %>
+        <li>
+            <button onclick="getMessageDetails('<%= message.id %>')">Click me!</a>
+            User: <%= message.user%> 
+            <br>
+            Message: <%= message.text%>
+            <br>
+            Time:<%= message.added%>
+        </li>
+        <%}%>
+    </ul>
+</body>
+
+</html>
